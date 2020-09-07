@@ -15,7 +15,6 @@ const useStyles = makeStyles();
 const Profile = (props) => {
 const classes = useStyles();
 const {name,email,username,id} = props.profile;
-console.log(props.profile.id);
     return (
         <div id="profile"> 
     <Card className={classes.root} id="profile-card">
@@ -27,7 +26,7 @@ console.log(props.profile.id);
             </CardContent>
         </CardActionArea>
             <CardActions>
-                <Link to={"/profile"+id}> <Button variant="contained" color="primary"> Timeline </Button> </Link>   
+                <Link to={"/profile/"+id}> <Button variant="contained" color="primary"> Timeline </Button> </Link>   
             </CardActions>
     </Card>
         </div>

@@ -1,28 +1,27 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './Comments.css'
+import PostComments from '../PostComments/PostComments';
 
-const useStyles = makeStyles();
 
 const Comments = (props) => {
-const classes = useStyles();
-const {name,body} = props.comments;
-
+const {id} = useParams;
+const [comments, setComments] = useState([])
+  useEffect(()=>{
+    const url = 'https://jsonplaceholder.typicode.com/comments';
+    fetch(url)
+    .then(res => res.json())
+    .then(data=> {
+        const exactComments = data.filter(post => data.postId == id) 
+        setComments(exactComments);
+        console.log(exactComments);
+    })
+  },[])
     return (
-        <div id="commnets">
-            <Card className={classes.root}>
-        <CardActionArea>
-            <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">  </Typography>
-            <Typography variant="body2" color="textSecondary" component="p"> <strong>{name}</strong></Typography>
-            <Typography variant="body2" color="textSecondary" component="p"> {body}</Typography>
-            </CardContent>
-        </CardActionArea>
-    </Card>
+        <div>
+            {
+              comments.map(comments => <PostComments comments={comments} key={comments.id} > </PostComments>)
+            }
         </div>
     );
 };
