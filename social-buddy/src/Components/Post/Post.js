@@ -13,7 +13,6 @@ useEffect(()=> {
   .then(data=> {
     const xyz = data.filter(dt => dt.userId == id) 
     setPost(xyz);
-    console.log(xyz);
   })
 }, [])
     return (

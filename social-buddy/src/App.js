@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,10 +7,8 @@ import {
 } from "react-router-dom";
 import Header from './Components/Header/Header';
 import Post from './Components/Post/Post';
-import Profile from './Components/Profile/Profile';
 import Comments from './Components/Comments/Comments';
 import AllProfiles from './Components/AllProfiles/AllProfiles';
-import UserPost from './Components/UserPost/UserPost';
 
 
 function App() {
@@ -19,7 +17,7 @@ function App() {
       <Header></Header>
       <Router>
         <Switch>
-        <Route path="/post/:id">
+        <Route path="/post/:postId">
             <Comments></Comments>
         </Route>
           <Route exact path="/">

@@ -1,4 +1,12 @@
-#commnets{
-    margin: 20px 40px 40px 40px;
-    background-color: aqua;
+#post{
+    height: 15rem;
+    width: 40rem;
+}
+
+#final-post{
+    text-align: center;
+}
+
+#card-post{
+    margin-bottom: 100px;
 }
