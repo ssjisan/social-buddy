@@ -23,7 +23,6 @@ const classes = useStyles();
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">  </Typography>
                         <Typography variant="body2" color="textSecondary" component="p"> <strong>Title</strong> <br/> {title} </Typography>
-                        {id}
                     </CardContent>
                 </CardActionArea>
                 <CardActions>

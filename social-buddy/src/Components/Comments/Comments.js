@@ -9,6 +9,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import './Comments.css';
 
 
@@ -32,18 +34,16 @@ const Comments = () => {
       .then(res => res.json())
       .then(data => setComments(data))
   }, [])
+  
     return (
-      <div id="final-post">
-        <div id="card-post">
-          <Card className={classes.root} id="post">
-                  <CardActionArea>
-                      <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p"> <strong>{post.name}</strong> <br/> </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p"> {post.body}</Typography>
-                      </CardContent>
-                  </CardActionArea>
-            </Card>
+      <div >
+        <div id="final-post">
+        <h4 style={{textAlign: 'center'}} >{post.body}</h4>
+        <div id="button">
+          <ThumbUpAltIcon /> <ThumbDownIcon />  
+        </div> 
         </div>
+        <br/>
         <div>
         {
           

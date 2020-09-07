@@ -1,12 +1,12 @@
-#post{
-    height: 15rem;
-    width: 40rem;
-}
-
 #final-post{
-    text-align: center;
+    margin: 0 auto;
+    max-width: 80%;
+    margin-top: 20px;
+    border:  .5px solid gray;
 }
 
-#card-post{
-    margin-bottom: 100px;
+
+
+#button{
+    text-align: center;
 }
